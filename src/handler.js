@@ -205,7 +205,7 @@ const deleteBookByIdHandler = (request, h) => {
   const { bookId } = request.params;
   const bookIndex = books.findIndex((book) => book.id === bookId);
 
-  if (bookIndex !== -1) {
+  if (bookIndex === -1) {
     const response = h.response({
       status: 'fail',
       message: 'Buku gagal dihapus. Id tidak ditemukan',
